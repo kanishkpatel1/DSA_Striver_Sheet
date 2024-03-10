@@ -41,5 +41,6 @@ public class PrintAllDivisors {
         Scanner scanner = new Scanner(System.in);
         int n=scanner.nextInt();
         System.out.println(printDivisors(n));
+        scanner.close();
     }
 }

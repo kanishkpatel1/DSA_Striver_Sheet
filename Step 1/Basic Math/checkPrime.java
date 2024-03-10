@@ -1,7 +1,6 @@
 import java.util.*;
 public class checkPrime {
-    static boolean checkPrime(int n){
-        int count=0;
+    static boolean checkPrime1(int n){
         for(int i=2;i<n;i++){
             if(n%i==0)
                 return false;
@@ -24,7 +23,8 @@ public class checkPrime {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n=sc.nextInt();
-        // System.out.println(checkPrime(n));
+        System.out.println(checkPrime1(n));
         System.out.println(checkPrime2(n));
+        sc.close();
     }
 }
