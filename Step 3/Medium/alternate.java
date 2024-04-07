@@ -1,7 +1,9 @@
 import java.util.*;
 public class alternate{
 
-    static int[] alter(int arr[]){
+
+    // BruteForce Solution
+      static int[] alter(int arr[]){
         
 
         int mid=arr.length/2;
@@ -27,8 +29,28 @@ public class alternate{
         }
         return res;
     }
+
+    // Optimal Solution : Single Pass Solution
+    static int[] alter2(int arr[]){
+        int res[]=new int[arr.length];
+        // start filling negative elements from 1 index with gap of 2
+        int negative=1;
+        int positive=0;
+        for(int i=0;i<arr.length;i++){
+         if(arr[i]<0){
+            res[negative]=arr[i];
+            negative+=2;
+         }
+         else{
+            res[positive]=arr[i];
+            positive+=2;
+         }
+        }
+        return res;
+    }
     public static void main(String[] args) {
         int arr[]={1, 2, -4, -5};
         System.out.println(Arrays.toString(alter(arr)));
+        System.out.println(Arrays.toString(alter2(arr)));
     }
 }
